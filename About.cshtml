@@ -1,0 +1,47 @@
+﻿@{
+    ViewData["Title"] = "About Me";
+}
+
+<div class="container mt-5">
+    <div class="card shadow-lg border-0 rounded-3">
+        <div class="card-body text-center">
+            <h2 class="card-title mb-4 text-primary">About Me</h2>
+
+            <p class="lead fw-bold">Hard Working | Leadership Qualities | Time Management</p>
+
+            <hr class="my-4" />
+
+            <p><strong>Languages:</strong> English, Telugu</p>
+            <p><strong>Location:</strong> Bengaluru</p>
+            <p><strong>Date of Birth:</strong> 26th March 2003</p>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background: linear-gradient(to right, #f8f9fa, #e9ecef);
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background: url('/Images/about.jpg') no-repeat center center fixed;
+        background-size: cover; /* This ensures the image covers the entire background */
+    }
+
+    .card {
+        background-color: #ffffff;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+    .card-title {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+    .lead {
+        color: #495057;
+    }
+</style>

@@ -1,0 +1,74 @@
+﻿@model IEnumerable<VyshnaviPortfolio.Models.Education>
+@{
+    ViewData["Title"] = "Education";
+}
+
+<div class="education-section">
+    <div class="container py-5">
+        <div class="card shadow-lg border-0 rounded-3">
+            <div class="card-body">
+                <h2 class="text-center text-primary mb-4">Education</h2>
+                <table class="table table-hover table-striped table-bordered text-center align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Course</th>
+                            <th>College</th>
+                            <th>Year</th>
+                            <th>Grade</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var edu in Model)
+                        {
+                            <tr>
+                                <td>@edu.Course</td>
+                                <td>@edu.College</td>
+                                <td>@edu.YearOfPassing</td>
+                                <td>@edu.Grade</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Background image for the entire page */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: url('/Images/education.jpg') no-repeat center center fixed;
+        background-size: cover; /* Ensures the image covers the entire page */
+    }
+
+    /* Section alignment */
+    .education-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Card styling */
+    .card {
+        background-color: rgba(255, 255, 255, 0.9); /* semi-transparent for readability */
+    }
+
+    /* Table styling */
+    table {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    th {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    td {
+        font-size: 1rem;
+    }
+</style>

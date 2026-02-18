@@ -1,0 +1,72 @@
+﻿@model IEnumerable<VyshnaviPortfolio.Models.Internship>
+@{
+    ViewData["Title"] = "Internships";
+}
+
+<div class="internship-section">
+    <div class="container py-5">
+        <div class="card shadow-lg border-0 rounded-3">
+            <div class="card-body">
+                <h2 class="text-center text-primary mb-4">Internships</h2>
+                <table class="table table-hover table-striped table-bordered text-center align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Company</th>
+                            <th>Duration</th>
+                            <th>Field</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var intern in Model)
+                        {
+                            <tr>
+                                <td>@intern.Company</td>
+                                <td>@intern.Duration</td>
+                                <td>@intern.Field</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    /* Background image for the entire page */
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        background: url('/Images/internship.jpg') no-repeat center center fixed;
+        background-size: cover; /* Ensures the image covers the entire page */
+    }
+
+    /* Section alignment */
+    .internship-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Card overlay for readability */
+    .card {
+        background-color: rgba(255, 255, 255, 0.9); /* semi-transparent */
+    }
+
+    /* Table styling */
+    table {
+        border-radius: 8px;
+        overflow: hidden;
+    }
+
+    th {
+        font-weight: bold;
+        text-transform: uppercase;
+    }
+
+    td {
+        font-size: 1rem;
+    }
+</style>

@@ -1,0 +1,70 @@
+﻿@{
+    ViewData["Title"] = "Projects";
+}
+
+<!-- Background video -->
+<div class="video-background">
+    <video autoplay muted loop playsinline>
+        <source src="/videos/projects.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
+
+<!-- Content overlay -->
+<div class="projects-section">
+    <div class="container py-5">
+        <h2 class="text-center text-light mb-5">Projects</h2>
+        
+        @foreach (var proj in Model)
+        {
+            <div class="card mb-4 shadow-lg border-0 rounded-3">
+                <div class="card-body">
+                    <h5 class="card-title text-primary fw-bold">@proj.Title</h5>
+                    <p class="card-text">@proj.Description</p>
+                    <p><strong>Technologies:</strong> @string.Join(", ", proj.Technologies)</p>
+                </div>
+            </div>
+        }
+    </div>
+</div>
+
+<style>
+    /* Background video setup */
+    .video-background {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        overflow: hidden;
+        z-index: -1; /* keep behind content */
+    }
+
+        .video-background video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ensures video covers entire screen */
+        }
+
+    /* Overlay section */
+    .projects-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+    }
+
+    /* Card styling */
+    .card {
+        background-color: rgba(255, 255, 255, 0.9); /* semi-transparent for readability */
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+        }
+
+    h2 {
+        font-weight: 600;
+    }
+</style>
